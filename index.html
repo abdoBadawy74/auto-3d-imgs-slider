@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3D Slider</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <section id="slider">
+      <input type="radio" name="sliderImg" id="s1" />
+      <input type="radio" name="sliderImg" id="s2" />
+      <input type="radio" name="sliderImg" id="s3" checked />
+      <input type="radio" name="sliderImg" id="s4" />
+      <input type="radio" name="sliderImg" id="s5" />
+      <label for="s1" id="slide1">
+        <img src="./image/img1.jpg" height="100%" width="100%" />
+      </label>
+      <label for="s2" id="slide2">
+        <img src="./image/img2.jpg" height="100%" width="100%" />
+      </label>
+      <label for="s3" id="slide3">
+        <img src="./image/img3.webp" height="100%" width="100%" />
+      </label>
+      <label for="s4" id="slide4">
+        <img src="./image/img4.webp" height="100%" width="100%" />
+      </label>
+      <label for="s5" id="slide5">
+        <img src="./image/img5.jpg" height="100%" width="100%" />
+      </label>
+
+      <script>
+        var currentSlide = 1;
+
+        function nextSlide() {
+          currentSlide = (currentSlide % 5) + 1;
+          document.getElementById("s" + currentSlide).checked = true;
+        }
+
+        setInterval(nextSlide, 3000);
+      </script>
+    </section>
+  </body>
+</html>
